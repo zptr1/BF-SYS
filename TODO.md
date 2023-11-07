@@ -1,0 +1,6 @@
+- [ ] Syntax highlighting
+- [ ] A library of user-uploaded ROMs on the website
+- [ ] A desktop version
+- [ ] Some compile-time optimizations
+- [ ] Highlight the current instruction when debug mode is on
+- [ ] something else i forgor

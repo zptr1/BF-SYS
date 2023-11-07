@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/assets/index.css">
+  <script src="/static/script/const.js" defer></script>
+  <script src="/static/script/devices.js" defer></script>
+  <script src="/static/script/ui.js" defer></script>
+  <script src="/static/script/index.js" defer></script>
+  <title>BF-SYS</title>
+</head>
+<body>
+  <main>
+    <canvas id="_screen"></canvas>
+    <div>
+      <textarea id="_src"></textarea>
+      <ul id="_mem"></ul>
+      <div>
+        <button id="_exec">start</button>
+        <button id="_pause" disabled>pause</button>
+        <button id="_step" style="display: none">step</button>
+        <button id="_debug">debug</button>
+        
+        <input type="range" id="_speed" value="100" min="1" max="1010" step="10" autocomplete="off">
+        <span id="_speed_label">100kHz</span>
+      </div>
+    </div>
+    <select id="_examples" autocomplete="off">
+      <option value="" style="display:none"></option>
+      <% for (const example of examples) { %>
+        <option value="<%= example %>"><%= example.replace(/\.bf$/, "").toUpperCase() %></option>
+      <% } %>
+    </select>
+    <div>
+      <div>
+        <a href="/reference">reference</a>
+        <a href="https://github.com/zptr1/BF-SYS">github</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/static/script/const.js"></script>
+  <link rel="stylesheet" href="/static/assets/index.css">
+  <title>BF-SYS | reference</title>
+</head>
+<body>
+  <div style="padding:1ch">
+    <h1>Reference</h1>
+    <p>
+      BF-SYS is a <a href="https://en.wikipedia.org/wiki/Fantasy_video_game_console">fantasy computer</a> that uses brainfuck as its instruction set.
+    </p>
+    <h1>Screen</h1>
+    <p>
+      BF-SYS has a 32x32 screen that uses 8-bit colors.
+      Here is a list of all colors:
+    </p>
+    <ul id="_colors"><noscript>Sorry, this requires JavaScript</noscript></ul>
+    <h1>Sound</h1>
+    <p>
+      BF-SYS has a speaker with 32 channels each with different frequency.
+      The speaker has a 60hz sound timer, which decreases the delay of each channel until they reach zero.
+      A channel plays sound only if its timer is not zero.
+      Here is a list of channels and its frequencies:
+    </p>
+    <ul id="_sounds"><noscript>Sorry, this requires JavaScript</noscript></ul>
+    <h1>Input</h1>
+    <p>Input is done with a regular keyboard using keycodes from <a href="http://gcctech.org/csc/javascript/javascript_keycodes.htm">here</a></p>
+    <h1>Memory</h1>
+    <p>There are 4096 bytes of memory, 8192 bytes of ROM and 4096 additional bytes for the 16-bit stack, allowing up to 256-depth nested loops.</p>
+    <h1>I/O</h1>
+    <p>
+      The input instruction (,) stops the execution until the next tick of a fixed 1kHz clock,
+      and sets the current memory cell to the code of the currently pressed key.
+      If no key is pressed, the cell is set to zero.
+      This instruction can also be used as sleep, since it always waits a constant amount of time no matter the speed of the execution.
+    </p>
+    <p>
+      The output instruction (.) increments the output pointer.
+      If the output pointer is divisible by 33, it changes the delay of a sound channel to the value at the current memory cell.
+      Otherwise, it changes a pixel on the screen to the value at the current memory cell.
+    </p>
+  </div>
+  <%# TODO: Use ejs instead %>
+  <script>
+    COLORS.forEach((x, i) => {
+      const li = document.createElement("li");
+      const span = document.createElement("span");
+      
+      li.style.backgroundColor = x;
+      span.textContent = i;
+
+      li.appendChild(span);
+      _colors.appendChild(li);
+    });
+    Array.from({ length: 32 }, (_, i) => {
+      const li = document.createElement("li");
+      const id = document.createElement("span");
+      const freq = document.createElement("span");
+
+      id.textContent = i;
+      freq.textContent = `${10 * (i + 1)}hz`;
+
+      li.appendChild(id);
+      li.appendChild(freq);
+      _sounds.appendChild(li);
+    });
+  </script>
+</body>
+</html>
