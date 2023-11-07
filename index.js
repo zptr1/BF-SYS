@@ -10,7 +10,7 @@ app.use("/examples", express.static("examples"));
 const EXAMPLES = await readdir("./examples");
 app.get("/", (_, res) => {
   res.render("index", {
-    examples: EXAMPLES.filter((x) => x.endsWith(".bf"))
+    examples: EXAMPLES.filter((x) => x.endsWith(".b"))
   });
 });
 
