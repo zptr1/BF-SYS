@@ -127,15 +127,14 @@ canvas {
 }
 
 #_mem {
-  margin: 1ch 0;
+  margin: 0;
   padding: 0;
-  max-height: 200px;
+  max-height: 170px;
   overflow-y: scroll;
   list-style: none;
 }
 
 #_mem:empty {
-  margin: 0;
   height: 0;
 }
 

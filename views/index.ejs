@@ -27,7 +27,7 @@
       </div>
     </div>
     <select id="_examples" autocomplete="off">
-      <option value="" style="display:none"></option>
+      <option value="" style="display:none">Select an example ...</option>
       <% for (const example of examples) { %>
         <option value="<%= example %>"><%= example.replace(/\.bf$/, "").toUpperCase() %></option>
       <% } %>
