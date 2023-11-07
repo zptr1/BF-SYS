@@ -34,7 +34,8 @@ const createSpeaker = (freq) => ({
   },
   play() {
     if (this.oscillator) return;
-    this.gain.gain.setValueAtTime(0.25, this.ctx.currentTime);
+    // TODO: Add a volume configuration
+    this.gain.gain.setValueAtTime(0.15, this.ctx.currentTime);
     this.oscillator = this.ctx.createOscillator();
     this.oscillator.frequency.setValueAtTime(freq, this.ctx.currentTime);
     this.oscillator.type = "square";
