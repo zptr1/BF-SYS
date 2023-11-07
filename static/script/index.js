@@ -19,8 +19,6 @@ function reset(buf) {
   for (let i = 0; i < buf.length; i++) buf[i] = 0;
 }
 
-let startedAt = 0;
-
 function start() {
   running = true;
   IP = 0; MP = 0; OP = 0; SP = 0;
@@ -51,7 +49,6 @@ function start() {
     });
   }
 
-  startedAt = Date.now();
   runInstrLoop();
 }
 
@@ -64,8 +61,6 @@ function halt() {
   _pause.textContent = "pause";
   _pause.disabled = true;
   _step.style.display = "none";
-
-  alert(Date.now() - startedAt);
 }
 
 async function runInstrLoop() {
