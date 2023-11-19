@@ -7,8 +7,8 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: kongtext, monospace;
-  background: #1c1c1c;
-  color: #fff;
+  background: #1c170b;
+  color: #d5cea3;
 }
 
 main {
@@ -42,13 +42,13 @@ textarea {
   tab-size: 4ch;
 }
 
-textarea, button {
+textarea, button, select {
   font-family: kongtext, monospace;
-  border: 3px solid #fff;
+  border: 3px solid #d5cea3;
   outline: none;
   font-size: 1rem;
   background: #2c2c2c;
-  color: #fff;
+  color: #d5cea3;
   padding: 0.5ch;
 }
 
@@ -68,19 +68,19 @@ h1 {
 }
 
 p {
-  color: #bbb;
+  filter: brightness(90%);
   font-size: 0.9rem;
   padding: 1ch 0;
   margin: 0;
 }
 
 canvas {
-  border: 3px solid #fff;
+  border: 3px solid #d5cea3;
   image-rendering: pixelated;
 }
 
 ::selection {
-  background-color: #fff;
+  background-color: #d5cea3;
   color: #000;
 }
 
@@ -167,15 +167,11 @@ canvas {
   color: #6aa;
 }
 
-#_share {
-  border-color: #66f;
-}
-
 a {
-  color: #66a;
+  color: #f0997d;
   text-decoration-thickness: 3px;
 }
 
 a:hover {
-  color: #88b;
+  color: #ffc3a1;
 }
